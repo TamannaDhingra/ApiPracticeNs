@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="details"
+            type="com.android.getapi.models.GetAllDetailsModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+
+        <ImageView
+            android:id="@+id/iv_details"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@{details.imageurl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="2dp"
+            android:text="@{details.name}"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/iv_details"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_realname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{details.realname}"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/textView_name"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+
+        <TextView
+            android:id="@+id/tv_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{details.team}"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/design_default_color_error"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="@+id/tv_realname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_realname" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
